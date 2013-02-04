@@ -1,4 +1,4 @@
-package TopElements;
+package other;
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Vidhur Vohra
  * 
  */
-public class TopElements {
+public class TopKElementsArray {
 
 	public static int[] topElems(int[] arr, int numOfTop) {
 		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();

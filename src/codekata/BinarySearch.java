@@ -1,14 +1,11 @@
 package codekata;
 
-public class binsearch {
+public class BinarySearch {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] testing = new int[] { 1, 2, 3 };
-		Object[] temp;
 		System.out.println(binSearchIterative(5, new int[] { 5, 6, 7, 8, 9, 10 }));
 		System.out.println(binSearchRec(5, new int[] { 1, 2, 3, 4, 5 }, 0, 5));
 	}
