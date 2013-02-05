@@ -1,4 +1,4 @@
-package codekata;
+package other;
 
 public class ParenthesisValid {
 

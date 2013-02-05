@@ -1,4 +1,4 @@
-package codekata;
+package other;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package smallinterview;
+package other;
 
 import java.util.Stack;
 

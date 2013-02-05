@@ -1,4 +1,5 @@
 package other;
+
 import java.util.HashSet;
 
 public class GeneratingSubsets {
@@ -7,10 +8,9 @@ public class GeneratingSubsets {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr = new int[] { 1, 2, 3 };
 		for (int i = 0; i <= arr.length; i++) {
-//			print(arr, i);
+			// print(arr, i);
 		}
 		recSubsets(arr, 0, new StringBuffer(), new HashSet<String>());
 
@@ -28,8 +28,7 @@ public class GeneratingSubsets {
 		System.out.println(sb.toString());
 	}
 
-	public static void recSubsets(int[] arr, int index, StringBuffer sb,
-			HashSet<String> set) {
+	public static void recSubsets(int[] arr, int index, StringBuffer sb, HashSet<String> set) {
 
 		if (index >= arr.length)
 			return;
