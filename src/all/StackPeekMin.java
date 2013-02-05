@@ -1,10 +1,10 @@
-package other;
+package all;
 
 import java.util.Stack;
 
 public class StackPeekMin {
 	Stack<Integer> stack = new Stack<Integer>();
-	Stack<Integer> minpeek = new Stack<Integer>();
+	Stack<Integer> minPeek = new Stack<Integer>();
 
 	/**
 	 * @param args
@@ -32,15 +32,15 @@ public class StackPeekMin {
 	public void push(int n) {
 		stack.push(n);
 
-		if (!(minpeek.size() > 0 && minpeek.peek() <= n))
-			minpeek.push(n);
+		if (!(minPeek.size() > 0 && minPeek.peek() <= n))
+			minPeek.push(n);
 	}
 
 	public void pop() {
-		if (minpeek.peek().equals(stack.peek()))
-			System.out.println(minpeek.pop());
+		if (minPeek.peek().equals(stack.peek()))
+			System.out.println(minPeek.pop());
 		else
-			System.out.println(minpeek.peek());
+			System.out.println(minPeek.peek());
 		stack.pop();
 
 	}

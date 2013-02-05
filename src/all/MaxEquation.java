@@ -1,15 +1,15 @@
-package other;
+package all;
+
 import java.util.Arrays;
 
 public class MaxEquation {
 
 	public static void main(String[] args) {
 
-		// leastCostToMult(new Matrix[] { new Matrix(50, 20), new Matrix(20, 1),
-		// new Matrix(1, 10), new Matrix(10, 100) });
+		leastCostToMult(new Matrix[] { new Matrix(50, 20), new Matrix(20, 1), new Matrix(1, 10), new Matrix(10, 100) });
 		// 2*3+5*3
 		// 0: *, 1: +
-		// maxExpression(new int[] { 10, 2, 3, 1 }, new int[] { 0, 0, 1 });
+		maxExpression(new int[] { 10, 2, 3, 1 }, new int[] { 0, 0, 1 });
 		int n = 5;
 		for (int s = 1; s < n; s++)
 			for (int i = 0; i < n - s; i++) {
@@ -30,10 +30,7 @@ public class MaxEquation {
 				int j = i + s;
 				dp[i][j] = Integer.MIN_VALUE;
 				for (int k = i; k < j; k++)
-					dp[i][j] = Math.max(
-							dp[i][j],
-							operandOperator(dp[i][k], dp[k + 1][j],
-									operators[k]));
+					dp[i][j] = Math.max(dp[i][j], operandOperator(dp[i][k], dp[k + 1][j], operators[k]));
 			}
 		}
 
@@ -79,8 +76,7 @@ public class MaxEquation {
 				int j = i + s;
 				dp[i][j] = Integer.MAX_VALUE;
 				for (int k = i; k < j; k++)
-					dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j]
-							+ mats[i].r * mats[k].c * mats[j].c);
+					dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j] + mats[i].r * mats[k].c * mats[j].c);
 
 			}
 		}

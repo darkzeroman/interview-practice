@@ -1,4 +1,4 @@
-package other;
+package all;
 import static org.junit.Assert.*;
 
 import java.util.PriorityQueue;

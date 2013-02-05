@@ -1,4 +1,4 @@
-package other;
+package all;
 
 public class CharToInt {
 

@@ -1,4 +1,4 @@
-package other;
+package all;
 import java.util.Arrays;
 
 public class MaxValueSubarray {
