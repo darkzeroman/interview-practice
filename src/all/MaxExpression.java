@@ -15,13 +15,6 @@ public class MaxExpression {
 
 	}
 
-	public static void maxExpressionHashing(int[] operands, int[] operators) {
-		Hashtable<Point, Integer> data = new Hashtable<Point, Integer>();
-		for (int i = 0; i < operands.length; i++)
-			data.put(new Point(i, i), operands[i]);
-
-	}
-
 	public static void maxExpression(int[] operands, int[] operators) {
 		int[][] dp = new int[operands.length][operands.length];
 		for (int i = 0; i < dp.length; ++i)
@@ -31,7 +24,7 @@ public class MaxExpression {
 			for (int i = 0; i + s < operands.length; i++) {
 				int j = i + s;
 				dp[i][j] = Integer.MIN_VALUE;
-				System.out.println(j + " " + i);
+				// System.out.println(j + " " + i);
 				for (int k = i; k < j; k++)
 					dp[i][j] = Math.max(dp[i][j], applyOperator(dp[i][k], dp[k + 1][j], operators[k]));
 			}
