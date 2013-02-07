@@ -2,50 +2,14 @@ package all;
 
 import java.util.Arrays;
 
-public class MaxEquation {
+public class MinCostMatrixMultiplication {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
-
 		leastCostToMult(new Matrix[] { new Matrix(50, 20), new Matrix(20, 1), new Matrix(1, 10), new Matrix(10, 100) });
-		// 2*3+5*3
-		// 0: *, 1: +
-		maxExpression(new int[] { 10, 2, 3, 1 }, new int[] { 0, 0, 1 });
-		int n = 5;
-		for (int s = 1; s < n; s++)
-			for (int i = 0; i < n - s; i++) {
-				int j = i + s;
-				System.out.println(i + " " + j);
 
-			}
-
-	}
-
-	public static void maxExpression(int[] operands, int[] operators) {
-		int[][] dp = new int[operands.length][operands.length];
-		for (int i = 0; i < dp.length; ++i)
-			dp[i][i] = operands[i];
-
-		for (int s = 1; s < operands.length; s++) {
-			for (int i = 0; i + s < operands.length; ++i) {
-				int j = i + s;
-				dp[i][j] = Integer.MIN_VALUE;
-				for (int k = i; k < j; k++)
-					dp[i][j] = Math.max(dp[i][j], operandOperator(dp[i][k], dp[k + 1][j], operators[k]));
-			}
-		}
-
-		for (int[] arr : dp)
-			System.out.println(Arrays.toString(arr));
-		System.out.println(dp[0][operands.length - 1]);
-	}
-
-	public static int operandOperator(int a, int b, int operator) {
-		if (operator == 0)
-			return a * b;
-		if (operator == 1)
-			return a + b;
-		System.out.println("Shouldn't be here.");
-		return a + b;
 	}
 
 	private static class Matrix {
@@ -86,4 +50,5 @@ public class MaxEquation {
 		System.out.println(dp[0][mats.length - 1]);
 		return dp[0][mats.length - 1];
 	}
+
 }
