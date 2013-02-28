@@ -1,19 +1,15 @@
-package all;
+
 
 import java.util.HashSet;
 
 public class GeneratingSubsets {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int[] arr = new int[] { 1, 2, 3 };
 		for (int i = 0; i <= arr.length; i++) {
 			// print(arr, i);
 		}
 		recSubsets(arr, 0, new StringBuffer(), new HashSet<String>());
-
 	}
 
 	public static void print(int[] arr, int mask) {
@@ -38,8 +34,12 @@ public class GeneratingSubsets {
 		addsb.append(arr[index]);
 		recSubsets(arr, index + 1, addsb, set);
 		recSubsets(arr, index + 1, noaddsb, set);
-		System.out.println(addsb);
-		System.out.println(noaddsb);
+		
+		if (addsb.length() > 0)
+			System.out.println(addsb);
+
+		if (noaddsb.length() > 0)
+			System.out.println(noaddsb);
 
 	}
 }

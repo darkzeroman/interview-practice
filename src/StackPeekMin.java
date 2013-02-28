@@ -1,14 +1,12 @@
-package all;
+
 
 import java.util.Stack;
 
+/** Get constant access to min element for a stack */
 public class StackPeekMin {
 	Stack<Integer> stack = new Stack<Integer>();
 	Stack<Integer> minPeek = new Stack<Integer>();
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StackPeekMin peekmin = new StackPeekMin();

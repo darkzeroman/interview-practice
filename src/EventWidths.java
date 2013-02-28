@@ -1,14 +1,13 @@
-package all;
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.ListIterator;
 
-public class EventWidths {
+import org.junit.Test;
 
-	public static void main(String[] args) {
-		new EventWidths().testCases();
-	}
+public class EventWidths {
 
 	public void makeWidths(Event[] inputEvents) {
 		ArrayList<Event> openEvents = new ArrayList<Event>();
@@ -49,6 +48,7 @@ public class EventWidths {
 			e.totalCols = maxNum;
 	}
 
+	@Test
 	public void testCases() {
 		Event firstEvent = new Event(1, 10, "1");
 		Event secondEvent = new Event(1, 10, "2");
@@ -56,8 +56,7 @@ public class EventWidths {
 		Event fourthEvent = new Event(11, 15, "4");
 		Event fifthEvent = new Event(1, 4, "5");
 
-		Event[] events = new Event[] { firstEvent, secondEvent, thirdEvent,
-				fourthEvent, fifthEvent };
+		Event[] events = new Event[] { firstEvent, secondEvent, thirdEvent, fourthEvent, fifthEvent };
 		Arrays.sort(events);
 		makeWidths(events);
 
@@ -75,11 +74,9 @@ public class EventWidths {
 					totalCols = Math.max(totalCols, event.totalCols);
 				}
 			if (i >= 10)
-				System.out.println(i + ": "
-						+ Arrays.toString(Arrays.copyOf(arr, totalCols)));
+				System.out.println(i + ": " + Arrays.toString(Arrays.copyOf(arr, totalCols)));
 			else
-				System.out.println("0" + i + ": "
-						+ Arrays.toString(Arrays.copyOf(arr, totalCols)));
+				System.out.println("0" + i + ": " + Arrays.toString(Arrays.copyOf(arr, totalCols)));
 
 		}
 
@@ -123,8 +120,7 @@ public class EventWidths {
 
 		public String toString() {
 			StringBuffer sb = new StringBuffer();
-			return sb.append(name).append(": ").append(colNum + 1)
-					.append(" out of ").append(totalCols).toString();
+			return sb.append(name).append(": ").append(colNum + 1).append(" out of ").append(totalCols).toString();
 		}
 	}
 

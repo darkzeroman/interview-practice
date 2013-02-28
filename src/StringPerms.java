@@ -1,9 +1,8 @@
-package all;
+
+
+/** Generating all permutations for a string */
 public class StringPerms {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String input = "ABC";

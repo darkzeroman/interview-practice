@@ -1,4 +1,4 @@
-package all;
+
 import java.awt.Point;
 import java.util.Hashtable;
 

@@ -1,12 +1,9 @@
-package all;
+
 
 import java.util.Arrays;
 
 public class MaxAreaHistogram {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int[] histogram = new int[] { 1, 6, 1, 1, 1, 1 };
 		System.out.println(divConq(histogram));
@@ -21,8 +18,7 @@ public class MaxAreaHistogram {
 
 		if (subhistogram.length > 1) {
 			int[] sub1 = Arrays.copyOfRange(subhistogram, 0, div);
-			int[] sub2 = Arrays.copyOfRange(subhistogram, div + 1,
-					subhistogram.length);
+			int[] sub2 = Arrays.copyOfRange(subhistogram, div + 1, subhistogram.length);
 
 			max = Math.max(max, divConq(sub1));
 			max = Math.max(max, divConq(sub2));
@@ -35,8 +31,7 @@ public class MaxAreaHistogram {
 	public static int findLowestValue(int[] subhistogram) {
 		int minIndex = 0;
 		for (int i = 0; i < subhistogram.length; i++) {
-			minIndex = (subhistogram[minIndex] > subhistogram[i]) ? i
-					: minIndex;
+			minIndex = (subhistogram[minIndex] > subhistogram[i]) ? i : minIndex;
 
 		}
 		return minIndex;

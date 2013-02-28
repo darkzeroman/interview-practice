@@ -1,4 +1,4 @@
-package all;
+
 import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
