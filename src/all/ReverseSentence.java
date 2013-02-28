@@ -1,11 +1,14 @@
 package all;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+/** Reverses the words in order in a sentence. */
 public class ReverseSentence {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		String str = "Hello!";
+		String str = "Hello! Test";
 
 		StringBuffer sb = reverseSection(str);
 		int last = 0;
@@ -22,7 +25,7 @@ public class ReverseSentence {
 
 	}
 
-	public static StringBuffer reverseSection(StringBuffer sb, int i, int j) {
+	private static StringBuffer reverseSection(StringBuffer sb, int i, int j) {
 		while (i < j) {
 			char temp = sb.charAt(i);
 			sb.setCharAt(i, sb.charAt(j));
@@ -33,15 +36,24 @@ public class ReverseSentence {
 		return sb;
 	}
 
-	public static StringBuffer reverseSection(StringBuffer sb) {
-		reverseSection(sb, 0, sb.length() - 1);
-		return sb;
-	}
-
-	public static StringBuffer reverseSection(String str) {
+	private static StringBuffer reverseSection(String str) {
 		StringBuffer sb = new StringBuffer(str);
 		reverseSection(sb, 0, str.length() - 1);
 		return sb;
+	}
+
+	@Test
+	public void testReverseSectionString() {
+		String str = "Test";
+		assertEquals(new StringBuffer(str).reverse().toString(), ReverseSentence.reverseSection(str).toString());
+
+		str = "ahahahhaha";
+		assertEquals(new StringBuffer(str).reverse().toString(), ReverseSentence.reverseSection(str).toString());
+
+		str = "  Hello  ";
+		assertEquals(new StringBuffer(str).reverse().toString(),
+				ReverseSentence.reverseSection(new StringBuffer(str), 2, 6).toString());
+
 	}
 
 }
